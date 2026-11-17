@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ЭРЭЛ — школьная платформа</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="brand">ЭРЭЛ<span>.</span></div><div id="who"></div></header>
+<main>
+<section id="auth" class="panel">
+<h1>Школьная платформа нового поколения</h1>
+<p class="muted">Войди в аккаунт или создай первый аккаунт администратора.</p>
+<div class="tabs"><button class="active" data-tab="login">Вход</button><button data-tab="register">Регистрация</button></div>
+<form id="loginForm"><input name="username" placeholder="Логин" required><input name="password" type="password" placeholder="Пароль" required><button class="primary">Войти</button></form>
+<form id="registerForm" hidden><input name="display_name" placeholder="Имя для отображения" required><input name="username" placeholder="Логин (от 3 символов)" required><input name="password" type="password" placeholder="Пароль (от 8 символов)" required><button class="primary">Создать аккаунт</button></form>
+<p id="authMsg" class="message"></p>
+</section>
+<section id="app" hidden>
+<nav id="nav"><button data-view="news" class="active">Новости</button><button data-view="tasks">Задания</button><button data-view="auction">Аукцион</button><button data-view="duties">Дежурства</button><button id="logout">Выйти</button></nav>
+<div id="adminTools" class="panel" hidden><h2>Панель администратора</h2><div class="admin-grid">
+<form id="newsForm"><h3>Добавить новость</h3><input name="title" placeholder="Заголовок" required><textarea name="body" placeholder="Текст новости" required></textarea><button class="primary">Опубликовать</button></form>
+<form id="taskForm"><h3>Добавить задание</h3><input name="title" placeholder="Название" required><textarea name="description" placeholder="Описание"></textarea><input name="due_date" placeholder="Срок (например, 25.11.2026)"><button class="primary">Добавить</button></form>
+<form id="lotForm"><h3>Добавить лот</h3><input name="title" placeholder="Название лота" required><textarea name="description" placeholder="Описание"></textarea><input name="starting_price" type="number" min="0" placeholder="Начальная ставка" required><button class="primary">Создать лот</button></form>
+</div></div>
+<div id="content" class="panel"></div>
+</section>
+</main>
+<footer>ЭРЭЛ · школьная цифровая среда</footer>
+<script src="/app.js"></script>
+</body></html>
